@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    
+     <title>How many fingers?</title>
+
+     <style type="text/css">
+
+       body {
+
+        font-size:18px;
+       }
+    
+       #guess {
+
+        background-color:hotpink;
+        border:none;
+        padding:0.5rem;
+        color:antiquewhite;
+        font-size:1rem;
+        margin-left:2rem;
+
+       }
+
+       #myNumber {
+
+        padding:0.5rem 1rem;
+        background-color:royalblue;
+        border:none;
+        color:antiquewhite;
+       }
+    
+     </style>
+    
+  </head>
+
+  <body>
+      
+      <p>How many fingers are you holding up?</p>
+      
+      <select id="myNumber">
+          
+          <option >0</option>
+          
+          <option>1</option>
+          
+          <option>2</option>
+          
+          <option selected>3</option>
+          
+          <option>4</option>
+          
+          <option>5</option>
+          
+      </select>
+         
+      <button id="guess">Guess!</button>
+
+    <script type="text/javascript">
+       
+       document.getElementById("guess").onclick = function() {
+           
+           var myNumber = document.getElementById("myNumber").value;
+           
+           var numberOfGuesses = 1;
+           
+           var gotIt = false;
+           
+           while (gotIt==false) {
+               
+               var guess = Math.random();
+               
+               guess = guess*6;
+               
+               guess = Math.floor(guess);
+               
+               if (guess==myNumber) {
+                   
+                   gotIt = true;
+                   
+                   alert ("Got it! The answer was " + myNumber + " It took me " + numberOfGuesses + " guesses");
+               } else {
+                   
+                   numberOfGuesses++;
+               }
+           }
+       } 
+             
+    </script>
+    
+  </body>
+
+</html>
